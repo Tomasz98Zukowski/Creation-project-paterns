@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Creation_project_paterns.Builder
 {
-    public class InvoiceBuilder
+    public class InvoiceBuilder : IInvoiceBuilder
     {
         private Invoice _invoice = new Invoice();
 
