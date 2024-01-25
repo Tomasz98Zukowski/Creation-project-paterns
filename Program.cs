@@ -1,4 +1,5 @@
-﻿using Creation_project_paterns.Builder;
+﻿using Creation_project_paterns.AbstractFactory;
+using Creation_project_paterns.Builder;
 using Creation_project_paterns.Factory;
 
 namespace Creation_project_paterns
@@ -18,12 +19,16 @@ namespace Creation_project_paterns
 
             //FACTORY
 
-            var shapeFactory = new ShapeFactory();
+            //var shapeFactory = new ShapeFactory();
 
-            var circle1 = shapeFactory.CreateShape(ShapeType.Circle);
-            circle1.Render();
-            
+            //var circle1 = shapeFactory.CreateShape(ShapeType.Circle);
+            //circle1.Render();
 
+            // Abstract factory
+
+            var uiApplication = new Application(new WindowsFactory());
+
+            uiApplication.RenderUI();
             
         }
     }
