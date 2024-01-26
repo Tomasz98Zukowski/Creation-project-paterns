@@ -1,6 +1,7 @@
 ﻿using Creation_project_paterns.AbstractFactory;
 using Creation_project_paterns.Builder;
 using Creation_project_paterns.Factory;
+using Creation_project_paterns.Prototype;
 
 namespace Creation_project_paterns
 {
@@ -26,10 +27,25 @@ namespace Creation_project_paterns
 
             // Abstract factory
 
-            var uiApplication = new Application(new WindowsFactory());
+            //var uiApplication = new Application(new WindowsFactory());
 
-            uiApplication.RenderUI();
-            
+            //uiApplication.RenderUI();
+
+            //PROTOTYPE
+
+            Circle c1 = new Circle()
+            {
+                Radius = 12,
+                X = 10,
+                Y = 15,
+                Border = new Border()
+                {
+                    Color = "Red",
+                    Size = "2px"
+                }
+            };
+            Circle c2 = (Circle)c1.Clone();
+
         }
     }
 }
