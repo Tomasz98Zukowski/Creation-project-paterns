@@ -1,7 +1,8 @@
 ﻿using Creation_project_paterns.AbstractFactory;
 using Creation_project_paterns.Builder;
-using Creation_project_paterns.Factory;
+//using Creation_project_paterns.Factory;
 using Creation_project_paterns.Prototype;
+using Creation_project_paterns.Singletone;
 
 namespace Creation_project_paterns
 {
@@ -33,18 +34,28 @@ namespace Creation_project_paterns
 
             //PROTOTYPE
 
-            Circle c1 = new Circle()
+            //Circle c1 = new Circle()
+            //{
+            //    Radius = 12,
+            //    X = 10,
+            //    Y = 15,
+            //    Border = new Border()
+            //    {
+            //        Color = "Red",
+            //        Size = "2px"
+            //    }
+            //};
+            //Circle c2 = (Circle)c1.Clone();
+
+            //SINGLETONE
+
+            var cfg = Configuration.GetInstance();
+            var cfg2 = Configuration.GetInstance();
+
+            if(ReferenceEquals(cfg, cfg2))
             {
-                Radius = 12,
-                X = 10,
-                Y = 15,
-                Border = new Border()
-                {
-                    Color = "Red",
-                    Size = "2px"
-                }
-            };
-            Circle c2 = (Circle)c1.Clone();
+                Console.WriteLine("Config is singletone");
+            }
 
         }
     }
